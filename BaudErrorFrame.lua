@@ -1,6 +1,8 @@
 local SelectedError = 1;
 local ErrorList = {};
+local SoundTime = 0;
 local QueueError = {};
+local EnableSound = true;
 
 function BaudErrorFrame_OnLoad(self)
 	self:RegisterEvent("VARIABLES_LOADED");
@@ -66,7 +68,12 @@ function BaudErrorFrameHandler(Error)
 	BaudErrorFrameAdd(Error,3);
 end
 
-function BaudErrorFrameShowError(Error) end
+function BaudErrorFrameShowError(Error)
+	if(GetTime() > SoundTime) and EnableSound then
+		PlaySoundFile("Interface\\AddOns\\ShestakUI\\Media\\Sounds\\Warning.mp3", "Master");
+		SoundTime = GetTime() + 1;
+	end
+end
 
 function BaudErrorFrameAdd(Error, Retrace)
 	for Key, Value in pairs(ErrorList)do

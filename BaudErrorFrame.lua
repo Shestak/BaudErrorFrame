@@ -14,7 +14,11 @@ function BaudErrorFrame_OnLoad(self)
 	tinsert(UISpecialFrames,self:GetName());
 
 	SlashCmdList["BaudErrorFrame"] = function()
-		BaudErrorFrame:Show();
+		if BaudErrorFrame:IsShown() then
+			BaudErrorFrame:Hide()
+		else
+			BaudErrorFrame:Show()
+		end
 	end
 	SLASH_BaudErrorFrame1 = "/bauderror";
 

@@ -2,7 +2,7 @@ local SelectedError = 1;
 local ErrorList = {};
 local SoundTime = 0;
 local QueueError = {};
-local EnableSound = true;
+local EnableSound = false;
 
 function BaudErrorFrame_OnLoad(self)
 	self:RegisterEvent("VARIABLES_LOADED");

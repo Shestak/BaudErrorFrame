@@ -1,4 +1,4 @@
-## Interface: 40000
+## Interface: 40100
 ## Title: Baud Error Frame
 ## Notes: Improved error reporting
 ## Author: Baudzilla, wolftankk, Affli@RU-Howling Fjord

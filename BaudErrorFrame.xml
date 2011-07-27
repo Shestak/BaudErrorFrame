@@ -186,7 +186,7 @@
 						</Anchors>
 						<Scripts>
 							<OnVerticalScroll>
-								FauxScrollFrame_OnVerticalScroll(self, BaudErrorFrameScrollValue(), 16, BaudErrorFrameScrollBar_Update);
+								FauxScrollFrame_OnVerticalScroll(self, offset, 16, BaudErrorFrameScrollBar_Update);
 							</OnVerticalScroll>
 						</Scripts>
 					</ScrollFrame>

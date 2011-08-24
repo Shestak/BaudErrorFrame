@@ -23,7 +23,7 @@
 		</Layers>
 		<Scripts>
 			<OnClick>
-				BaudErrorFrameEntry_OnClick(self);
+				BaudErrorFrameEntry_OnClick(self)
 			</OnClick>
 		</Scripts>
 	</Button>
@@ -71,20 +71,20 @@
 		</Layers>
 		<Scripts>
 			<OnLoad>
-				self:RegisterForClicks("LeftButtonUp");
-				self:SetFrameLevel(self:GetFrameLevel()+1);
+				self:RegisterForClicks("LeftButtonUp")
+				self:SetFrameLevel(self:GetFrameLevel() + 1)
 			</OnLoad>
 			<OnEnter>
-				BaudErrorFrameMinimapButton_OnEnter(self);
+				BaudErrorFrameMinimapButton_OnEnter(self)
 			</OnEnter>
 			<OnLeave>
-				BaudErrorFrameMinimapButton_OnLeave(self);
+				BaudErrorFrameMinimapButton_OnLeave(self)
 			</OnLeave>
 			<OnClick>
-				BaudErrorFrame:Show();
+				BaudErrorFrame:Show()
 			</OnClick>
 			<OnUpdate>
-				BaudErrorFrameMinimapButton_OnUpdate(self);
+				BaudErrorFrameMinimapButton_OnUpdate(self)
 			</OnUpdate>
 		</Scripts>
 	</Button>
@@ -140,12 +140,12 @@
 				<Anchors>
 					<Anchor point="TOPLEFT">
 						<Offset>
-							<AbsDimension x="40" y="-40"/>
+							<AbsDimension x="20" y="-40"/>
 						</Offset>
 					</Anchor>
 					<Anchor point="RIGHT">
 						<Offset>
-							<AbsDimension x="-40"/>
+							<AbsDimension x="-20"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -186,7 +186,7 @@
 						</Anchors>
 						<Scripts>
 							<OnVerticalScroll>
-								FauxScrollFrame_OnVerticalScroll(self, offset, 16, BaudErrorFrameScrollBar_Update);
+								FauxScrollFrame_OnVerticalScroll(self, offset, 16, BaudErrorFrameScrollBar_Update)
 							</OnVerticalScroll>
 						</Scripts>
 					</ScrollFrame>
@@ -213,34 +213,34 @@
 						</Layers>
 						<Scripts>
 							<OnLoad>
-								getglobal(self:GetName().."Texture"):SetVertexColor(0.5,0.5,0);
+								getglobal(self:GetName().."Texture"):SetVertexColor(0.5, 0.5, 0)
 							</OnLoad>
 						</Scripts>
 					</Frame>
 				</Frames>
 				<Scripts>
 					<OnLoad>
-						self:SetBackdropBorderColor(0.37, 0.3, 0.3);
-						self.Entries = 8;
+						self:SetBackdropBorderColor(0.37, 0.3, 0.3)
+						self.Entries = 8
 						for Index = 1, self.Entries do
-							CreateFrame("Button",self:GetName().."Entry"..Index,self,"BaudErrorFrameEntryTemplate"):SetPoint("TOP",0,6-16*Index);
+							CreateFrame("Button", self:GetName().."Entry"..Index, self, "BaudErrorFrameEntryTemplate"):SetPoint("TOP", 0, 6-16*Index)
 						end
 					</OnLoad>
 				</Scripts>
 			</Frame>
 			<Frame name="$parentDetailScrollBox">
 				<Size>
-					<AbsDimension x="500" y="258"/>
+					<AbsDimension x="550" y="250"/>
 				</Size>
 				<Anchors>
 					<Anchor point="BOTTOMLEFT">
 						<Offset>
-							<AbsDimension x="40" y="40"/>
+							<AbsDimension x="20" y="40"/>
 						</Offset>
 					</Anchor>
 					<Anchor point="RIGHT">
 						<Offset>
-							<AbsDimension x="-40"/>
+							<AbsDimension x="-20"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -285,7 +285,7 @@
 						<ScrollChild>
 							<EditBox name="BaudErrorFrameEditBox" autoFocus="false" multiLine="true">
 								<Size>
-									<AbsDimension x="466" y="250"/>
+									<AbsDimension x="550" y="250"/>
 								</Size>
 								<TextInsets>
 									<AbsInset left="4" right="4" top="4" bottom="4"/>
@@ -293,29 +293,29 @@
 								<FontString inherits="ChatFontNormal"/>
 								<Scripts>
 									<OnTextChanged>
-										BaudErrorFrameEditBox_OnTextChanged(self);
+										BaudErrorFrameEditBox_OnTextChanged(self)
 									</OnTextChanged>
 									<OnTextSet>
-										BaudErrorFrameEditBox_OnTextSet();
+										BaudErrorFrameEditBox_OnTextSet()
 									</OnTextSet>
 									<OnEscapePressed>
-										self:ClearFocus();
+										self:ClearFocus()
 									</OnEscapePressed>
 								</Scripts>
 							</EditBox>
 						</ScrollChild>
 						<Scripts>
 							<OnLoad>
-								ScrollFrame_OnLoad(self);
-								self.scrollBarHideable = 1;
-								getglobal(self:GetName().."ScrollBar"):Hide();
+								ScrollFrame_OnLoad(self)
+								self.scrollBarHideable = 1
+								getglobal(self:GetName().."ScrollBar"):Hide()
 							</OnLoad>
 						</Scripts>
 					</ScrollFrame>
 				</Frames>
 				<Scripts>
 					<OnLoad>
-						self:SetBackdropBorderColor(0.37, 0.3, 0.3);
+						self:SetBackdropBorderColor(0.37, 0.3, 0.3)
 					</OnLoad>
 				</Scripts>
 			</Frame>
@@ -326,13 +326,13 @@
 				<Anchors>
 					<Anchor point="BOTTOMRIGHT">
 						<Offset>
-							<AbsDimension x="-40" y="10"/>
+							<AbsDimension x="-20" y="10"/>
 						</Offset>
 					</Anchor>
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						self:GetParent():Hide();
+						self:GetParent():Hide()
 					</OnClick>
 				</Scripts>
 			</Button>
@@ -349,24 +349,24 @@
 				</Anchors>
 				<Scripts>
 					<OnClick>
-						BaudErrorFrameClearButton_OnClick(self);
+						BaudErrorFrameClearButton_OnClick(self)
 					</OnClick>
 				</Scripts>
 			</Button>
 		</Frames>
 		<Scripts>
 			<OnLoad>
-				BaudErrorFrame_OnLoad(self);
-				self:SetBackdropBorderColor(0.37, 0.3, 0.3);
+				BaudErrorFrame_OnLoad(self)
+				self:SetBackdropBorderColor(0.37, 0.3, 0.3)
 			</OnLoad>
 			<OnEvent>
-				BaudErrorFrame_OnEvent(self, event, ...);
+				BaudErrorFrame_OnEvent(self, event, ...)
 			</OnEvent>
 			<OnShow>
-				BaudErrorFrame_OnShow();
+				BaudErrorFrame_OnShow()
 			</OnShow>
 			<OnHide>
-				BaudErrorFrame_OnHide();
+				BaudErrorFrame_OnHide()
 			</OnHide>
 		</Scripts>
 	</Frame>

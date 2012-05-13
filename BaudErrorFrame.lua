@@ -135,7 +135,7 @@ function BaudErrorFrameScrollBar_Update()
 	local Highlight = _G[FrameName.."Highlight"]
 	local Total = getn(ErrorList)
 
-	FauxScrollFrame_Update(ScrollBar,Total,Frame.Entries, 16)
+	FauxScrollFrame_Update(ScrollBar, Total, Frame.Entries, 16)
 	Highlight:Hide()
 	for Line = 1, Frame.Entries do
 		Index = Line + FauxScrollFrame_GetOffset(ScrollBar)

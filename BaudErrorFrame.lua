@@ -13,7 +13,7 @@ function BaudErrorFrame_OnLoad(self)
 	self:RegisterEvent("MACRO_ACTION_FORBIDDEN")
 	UIParent:UnregisterEvent("MACRO_ACTION_FORBIDDEN")
 
-	tinsert(UISpecialFrames,self:GetName())
+	tinsert(UISpecialFrames, self:GetName())
 
 	SlashCmdList["BaudErrorFrame"] = function()
 		if BaudErrorFrame:IsShown() then

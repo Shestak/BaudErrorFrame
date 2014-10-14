@@ -1,7 +1,7 @@
-## Interface: 50400
+## Interface: 60000
 ## Title: Baud Error Frame
 ## Notes: Improved error reporting
 ## Author: Baudzilla, wolftankk, Affli
-## Version: 1.5
+## Version: 1.6
 
 BaudErrorFrame.xml

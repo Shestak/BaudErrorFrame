@@ -12,7 +12,7 @@
 			</Anchor>
 			<Anchor point="RIGHT">
 				<Offset>
-					<AbsDimension x="-21"/>
+					<AbsDimension x="-24"/>
 				</Offset>
 			</Anchor>
 		</Anchors>
@@ -194,7 +194,7 @@
 							</Anchor>
 							<Anchor point="RIGHT">
 								<Offset>
-									<AbsDimension x="-21"/>
+									<AbsDimension x="-24"/>
 								</Offset>
 							</Anchor>
 						</Anchors>
@@ -280,7 +280,7 @@
 									<AbsDimension x="550" y="250"/>
 								</Size>
 								<TextInsets>
-									<AbsInset left="4" right="21" top="4" bottom="4"/>
+									<AbsInset left="4" right="24" top="4" bottom="4"/>
 								</TextInsets>
 								<FontString inherits="ChatFontNormal"/>
 								<Scripts>

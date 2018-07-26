@@ -12,6 +12,7 @@ function BaudErrorFrame_OnLoad(self)
 	UIParent:UnregisterEvent("ADDON_ACTION_FORBIDDEN")
 	self:RegisterEvent("MACRO_ACTION_FORBIDDEN")
 	UIParent:UnregisterEvent("MACRO_ACTION_FORBIDDEN")
+	UIParent:UnregisterEvent("LUA_WARNING")
 
 	tinsert(UISpecialFrames, self:GetName())
 

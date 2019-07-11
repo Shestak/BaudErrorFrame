@@ -126,6 +126,19 @@ function BaudErrorFrameScrollValue()
 	end
 end
 
+local function colorStack(ret)
+	ret = tostring(ret) or "" -- Yes, it gets called with nonstring from somewhere /mikk
+	ret = ret:gsub("[%.I][%.n][%.t][%.e][%.r]face\\", "")
+	ret = ret:gsub("%.?%.?%.?\\?AddOns\\", "")
+	ret = ret:gsub("|([^chHr])", "||%1"):gsub("|$", "||") -- Pipes
+	ret = ret:gsub("<(.-)>", "|cffffd200<%1>|r") -- Things wrapped in <>
+	ret = ret:gsub("%[(.-)%]", "|cffffd200[%1]|r") -- Things wrapped in []
+	ret = ret:gsub("([\"`'])(.-)([\"`'])", "|cff82c5ff%1%2%3|r") -- Quotes
+	ret = ret:gsub(":(%d+)([%S\n])", ":|cff7fff7f%1|r%2") -- Line numbers
+	ret = ret:gsub("([^\\]+%.lua)", "|cffffffff%1|r") -- Lua files
+	return ret
+end
+
 function BaudErrorFrameScrollBar_Update()
 	if not BaudErrorFrame:IsShown()then return end
 
@@ -144,7 +157,8 @@ function BaudErrorFrameScrollBar_Update()
 		ButtonText = _G[FrameName.."Entry"..Line.."Text"]
 		if Index <= Total then
 			Button:SetID(Index)
-			ButtonText:SetText(ErrorList[Index].Error)
+			ButtonText:SetText(colorStack(ErrorList[Index].Error))
+			ButtonText:SetTextColor(0.7, 0.7, 0.7)
 			Button:Show()
 			if Index == SelectedError then
 				Highlight:SetPoint("TOP", Button)
@@ -159,11 +173,12 @@ end
 
 function BaudErrorFrameEditBoxUpdate()
 	if ErrorList[SelectedError] then
-		BaudErrorFrameEditBox.TextShown = ErrorList[SelectedError].Error.."\nCount: "..ErrorList[SelectedError].Count.."\n\nCall Stack:\n"..ErrorList[SelectedError].Stack
+		BaudErrorFrameEditBox.TextShown = colorStack(ErrorList[SelectedError].Error.."\nCount: "..ErrorList[SelectedError].Count.."\n\nCall Stack:\n"..ErrorList[SelectedError].Stack)
 	else
 		BaudErrorFrameEditBox.TextShown = ""
 	end
 	BaudErrorFrameEditBox:SetText(BaudErrorFrameEditBox.TextShown)
+	BaudErrorFrameEditBox:SetTextColor(0.7, 0.7, 0.7)
 end
 
 function BaudErrorFrameEditBox_OnTextChanged(self)
